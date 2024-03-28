@@ -1,32 +1,6 @@
 import "../assets/css/AddPirateForm.css";
 import React from "react";
 
-//useEffect is funky!!!!
-/*
-import { useEffect } from 'react';
-import { createConnection } from './chat.js';
-
-function ChatRoom({ roomId }) {
-  const [serverUrl, setServerUrl] = useState('https://localhost:1234');
-
-  useEffect(() => {
-    const connection = createConnection(serverUrl, roomId);
-    connection.connect();
-    return () => {
-      connection.disconnect();
-    };
-  }, [serverUrl, roomId]);
-  // ...
-}
-
-*/
-
-/* Note we are create a reference... not calling the function...
-functionName vs functionName() */
-
-// Destructor react component
-// const AddPirate = (props) => {
-
 const AddPirate = ({ addPirate }) => {
   const [name, setName] = React.useState("");
   const [vessel, setVessel] = React.useState("");
@@ -34,26 +8,27 @@ const AddPirate = ({ addPirate }) => {
 
   //Can't be outside of AddPrite as the variables would be out of scope... forgot error message something about global variables
   function createPirate(event) {
-    event.preventDefault();
+    event.preventDefault(); //Stops the page from refeshing!
     const pirate = {
+      // Short Form
+      // const pirate = {
+      //   name,
+      //   vessel,
+      //   weapon,
+      // };
+
+      // Long Form
       name: name,
       vessel: vessel,
       weapon: weapon,
     };
 
-    addPirate(pirate); //Error here!
+    addPirate(pirate);
 
-    // setName("");
-    // setVessel("");
-    // setWeapon("");
+    setName("");
+    setVessel("");
+    setWeapon("");
   }
-
-  // Note if the Name: Value are the same you can write const = pirate as follows
-  // const pirate = {
-  //   name,
-  //   vessel,
-  //   weapon,
-  // };
 
   return (
     <form onSubmit={createPirate}>
