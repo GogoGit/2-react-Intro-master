@@ -46,6 +46,12 @@ function App() {
     setPirates((prev) => [pirate, ...prev]);
   };
 
+  const removePirate = (name) => {
+    console.log("removing a pirate");
+    const newPirates = pirates.filter((pirate) => pirate.name != name);
+    setPirates(newPirates);
+  };
+
   return (
     <div>
       <Header title={randomize()} />
@@ -55,7 +61,12 @@ function App() {
       {/* {piratesFile.map((pirate, index) => ( */}
       {pirates.map((pirate, index) => (
         // <Pirate key={index} name={pirate.name} tagline={randomize()} />
-        <Pirate key={index} pirate={pirate} tagline={randomize()} />
+        <Pirate
+          key={index}
+          pirate={pirate}
+          tagline={randomize()}
+          removePirate={removePirate}
+        />
       ))}
     </div>
   );
