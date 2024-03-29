@@ -3,7 +3,7 @@ import "../assets/css/Pirate.css";
 import avatar from "../assets/img/avatar.png";
 // Destructuring 3
 function Pirate({
-  pirate: { name, year, weapon, vessel, desc },
+  pirate: { id, name, year, weapon, vessel, desc },
   tagline,
   removePirate,
 }) {
@@ -11,6 +11,7 @@ function Pirate({
     <section>
       <summary>
         <img src={avatar} alt="pirate" />
+        <h2>ID: {id}</h2>
         <h3>{name}</h3>
         <ul>
           <li>Died: {year}</li>
@@ -23,7 +24,8 @@ function Pirate({
         <p>{desc}</p>
         {/* <Button onClick={removePirate()} text="Remove Pirate" /> */}
         {/* if you don't setup it up like below it will triger the function to run automatically! */}
-        <Button onClick={() => removePirate(name)} text="Remove Pirate" />
+        {/* <Button onClick={() => removePirate(name)} text="Remove Pirate" /> */}
+        <Button onClick={() => removePirate(id)} text="Remove Pirate" />
       </article>
     </section>
   );

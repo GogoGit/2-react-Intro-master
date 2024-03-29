@@ -80,42 +80,6 @@
       "year": 1850,
       "weapon": "Sword",
       "vessel": "Bounty"
-    },
-    {
-      "id": "f9cc",
-      "name": "1",
-      "vessel": "1",
-      "weapon": "1",
-      "year": "1",
-      "desc": "1",
-      "image": "avatar.png"
-    },
-    {
-      "id": "86ec",
-      "name": "2",
-      "vessel": "2",
-      "weapon": "2",
-      "year": "2",
-      "desc": "2",
-      "image": "avatar.png"
-    },
-    {
-      "id": "7894",
-      "name": "1",
-      "vessel": "1",
-      "weapon": "1",
-      "year": "1",
-      "desc": "1",
-      "image": "avatar.png"
-    },
-    {
-      "id": "b372",
-      "name": "4",
-      "vessel": "4",
-      "weapon": "4",
-      "year": "4",
-      "desc": "4",
-      "image": "avatar.png"
     }
   ]
 }

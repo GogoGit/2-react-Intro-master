@@ -4,6 +4,7 @@ import Button from "./Button";
 
 const AddPirate = ({ addPirate }) => {
   const initialFormState = {
+    id: "",
     name: "",
     vessel: "",
     weapon: "",
