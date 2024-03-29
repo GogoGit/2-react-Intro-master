@@ -2,7 +2,7 @@
 
 import Header from "./components/Header";
 import Pirate from "./components/Pirate";
-import piratesFile from "./data/sample-pirates-array";
+// import piratesFile from "./data/sample-pirates-array";  //using JSON Server :
 // import React from "react";
 import React, { useState, useEffect } from "react";
 import AddPirate from "./components/AddPirate";
@@ -22,7 +22,7 @@ function passPirateData(data) {
 
 function App() {
   // const [pirates, setPirates] = React.useState(piratesFile);
-  const [pirates, setPirates] = useState(piratesFile);
+  const [pirates, setPirates] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3001/pirates`)
@@ -33,12 +33,12 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data.length);
+        console.log(data.length); //note this happens twice!!!!  Why
         //This is a FUNCTION
         setPirates(data);
       })
       .catch((err) => console.error(`Fetch problem: ${err.message}`));
-  }, []);
+  }, []); //This is [] 'array' stops it from infinately looping.  It only runs once!!!  Need more information!
 
   const addPirate = (pirate) => {
     console.log(pirate);
